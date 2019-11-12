@@ -1,0 +1,99 @@
+CREATE TABLE frCustomer(
+                           customerId VARCHAR(10) PRIMARY KEY ,
+                           name VARCHAR(20),
+                           address VARCHAR(20),
+                           contactNo int(10)
+);
+
+CREATE TABLE frOrder(
+                        orderId VARCHAR(10) PRIMARY KEY ,
+                        date date,
+                        frCustomerId VARCHAR(10),
+                        CONSTRAINT FOREIGN KEY(frCustomerId) REFERENCES frCustomer(customerId)
+);
+
+CREATE TABLE item(
+                     itemCode VARCHAR(10) PRIMARY KEY ,
+                     description VARCHAR(20),
+                     unitPrice DECIMAL(10),
+                     qtyOnHand int(10)
+
+);
+
+CREATE TABLE orderDetail(
+                            orderId VARCHAR(10),
+                            itemCode VARCHAR(10),
+                            unitPrice DECIMAL(10),
+                            quantity INt(10),
+                            CONSTRAINT FOREIGN KEY(orderId) REFERENCES frOrder(orderId),
+                            CONSTRAINT FOREIGN KEY(itemCode) REFERENCES item(itemCode),
+                            PRIMARY KEY(orderId,itemCode)
+);
+
+CREATE TABLE fnrCustomer(
+                            customerId VARCHAR(10) PRIMARY KEY ,
+                            name VARCHAR(20),
+                            address VARCHAR(20),
+                            contactNo int(10)
+);
+
+CREATE TABLE fnrOrder(
+                         orderId VARCHAR(10) PRIMARY KEY ,
+                         jobId VARCHAR(10),
+                         date date,
+                         price DECIMAL(10),
+                         advance DECIMAL(10),
+                         CONSTRAINT FOREIGN KEY(jobId) REFERENCES job(jobId)
+);
+
+CREATE TABLE job(
+                    jobId VARCHAR(10)PRIMARY KEY ,
+                    customerId VARCHAR(10),
+                    description VARCHAR(100),
+                    CONSTRAINT FOREIGN KEY(customerId) REFERENCES fnrCustomer(customerId)
+);
+
+CREATE TABLE worker(
+                       workerId VARCHAR(10) PRIMARY KEY ,
+                       name VARCHAR(20),
+                       address VARCHAR(50),
+                       contactNo Int(10),
+                       salary DECIMAL(10)
+);
+
+CREATE TABLE jobDetail(
+                          jobId VARCHAR(10),
+                          workerId VARCHAR(10),
+                          PRIMARY KEY(jobId,workerId),
+                          CONSTRAINT FOREIGN KEY(jobId) REFERENCES job(jobId),
+                          CONSTRAINT FOREIGN KEY(workerId) REFERENCES worker(workerId)
+);
+
+CREATE TABLE estimation(
+                           estimationNo VARCHAR(10) PRIMARY KEY ,
+                           jobId VARCHAR(10),
+                           workerId VARCHAR(10),
+                           price DECIMAL(10),
+                           CONSTRAINT FOREIGN KEY(jobId) REFERENCES job(jobId)
+);
+
+CREATE TABLE estimationDetail(
+                                 estimationNo VARCHAR(10),
+                                 itemCode VARCHAR(10),
+                                 eiQuantity int(10),
+                                 unitPrice DECIMAL(10),
+                                 PRIMARY KEY(estimationNo,itemCode),
+                                 CONSTRAINT FOREIGN KEY(estimationNo) REFERENCES estimation(estimationNo),
+                                 CONSTRAINT FOREIGN KEY(itemCode) REFERENCES item(itemCode)
+);
+
+
+SELECT j.jobId,c.customerId,c.name,j.description FROM fnrCustomer c INNER JOIN job j ON c.customerId = j.customerId;
+
+SELECT j.jobId,j.description FROM job j LEFT OUTER JOIN estimation e ON j.jobId = e.jobId WHERE e.jobId IS NULL;
+
+SELECT * FROM item;
+
+SELECT * FROM item WHERE itemCode = 'IC001';
+
+SELECT e.jobId,j.customerId,c.name,e.price FROM fnrCustomer c INNER JOIN job j ON c.customerId = j.customerId INNER JOIN estimation e on j.jobId = e.jobId;
