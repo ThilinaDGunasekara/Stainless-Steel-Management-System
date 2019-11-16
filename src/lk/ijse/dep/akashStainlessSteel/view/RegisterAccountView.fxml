@@ -35,7 +35,7 @@
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXButton>
-            <JFXButton fx:id="btnRegister" buttonType="RAISED" layoutX="207.0" layoutY="275.0" onAction="#btnRegister_OnAction" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #9620D4;" text="Register" textFill="#000000cf">
+            <JFXButton fx:id="btnRegister" buttonType="RAISED" layoutX="207.0" layoutY="275.0" onAction="#btnRegister_OnAction" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #5C73F2;" text="Register" textFill="#000000cf">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXButton>

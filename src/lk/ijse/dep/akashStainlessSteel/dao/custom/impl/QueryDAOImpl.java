@@ -87,7 +87,7 @@ public class QueryDAOImpl implements QueryDAO {
 
     @Override
     public List<CustomJobEntity> searchAllJobs(String searchText) throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT j.jobId,j.description,c.name,j.description FROM job j INNER JOIN fnrCustomer c ON j.customerId = c.customerId WHERE j.jobId LIKE ? OR j.description LIKE ? OR j.customerId LIKE ? OR c.name LIKE ?",searchText,searchText,searchText,searchText);
+        ResultSet resultSet = CrudUtil.execute("SELECT j.jobId,j.customerId,c.name,j.description FROM job j INNER JOIN fnrCustomer c ON j.customerId = c.customerId WHERE j.jobId LIKE ? OR j.description LIKE ? OR j.customerId LIKE ? OR c.name LIKE ?",searchText,searchText,searchText,searchText);
         List<CustomJobEntity> customJobEntities = new ArrayList<>();
         while (resultSet.next()){
             customJobEntities.add(new CustomJobEntity(

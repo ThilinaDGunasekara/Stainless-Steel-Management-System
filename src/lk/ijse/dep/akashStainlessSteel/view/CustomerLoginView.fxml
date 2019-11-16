@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="anpCustomer" prefHeight="501.0" prefWidth="98.0" style="-fx-background-color: #829fd9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.akashStainlessSteel.controller.CustomerLoginView">
    <children>
-      <AnchorPane fx:id="anpLoad" prefHeight="501.0" prefWidth="715.0" style="-fx-background-color: #2A2F35;">
+      <AnchorPane fx:id="anpLoad" prefHeight="501.0" prefWidth="715.0" style="-fx-background-color: #829FD9;">
          <children>
             <ImageView fx:id="imgItemNeedCustomer" fitHeight="231.0" fitWidth="186.0" layoutX="121.0" layoutY="127.0" onMouseClicked="#ItemNeedCustomer_OnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,7 +27,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <Label fx:id="lbl" layoutX="217.0" layoutY="32.0" text="Select Customer" textFill="#fe4545">
+            <Label fx:id="lbl" layoutX="217.0" layoutY="32.0" text="Select Customer" textFill="#230a59">
                <font>
                   <Font size="37.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="lblDescription" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="446.0" prefHeight="26.0" prefWidth="566.0" text="Please select one of above main operations to proceed" textFill="#fe4545">
+            <Label fx:id="lblDescription" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="446.0" prefHeight="26.0" prefWidth="566.0" text="Please select one of above main operations to proceed" textFill="#230a59">
                <font>
                   <Font size="14.0" />
                </font>

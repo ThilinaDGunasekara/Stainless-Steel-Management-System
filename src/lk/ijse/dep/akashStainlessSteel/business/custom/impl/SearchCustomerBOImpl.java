@@ -16,7 +16,7 @@ public class SearchCustomerBOImpl implements SearchCustomerBO {
     @Override
     public List<SearchCustomerDTO> searchCustomer(String searchTxt) throws Exception {
 
-        List<SearchCustomerDTO> searchCustomerDTOS =new ArrayList<>();
+        List<SearchCustomerDTO> searchCustomerDTOS = new ArrayList<>();
         List<SearchCustomer> searchCustomers = searchCustomerDAO.searchCustomer(searchTxt);
         for (SearchCustomer searchCustomer : searchCustomers) {
             searchCustomerDTOS.add(new SearchCustomerDTO(
@@ -34,6 +34,7 @@ public class SearchCustomerBOImpl implements SearchCustomerBO {
 
         List<SearchCustomerDTO> searchCustomerDTOS =new ArrayList<>();
         List<SearchCustomer> searchCustomers = searchCustomerDAO.searchCustomerFnr(searchTxt);
+
         for (SearchCustomer searchCustomer : searchCustomers) {
             searchCustomerDTOS.add(new SearchCustomerDTO(
                     searchCustomer.getCustomerId(),

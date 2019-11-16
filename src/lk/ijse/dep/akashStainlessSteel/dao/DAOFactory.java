@@ -46,6 +46,8 @@ public class DAOFactory {
                 return (T) new SearchItemDAOImpl();
             case SEARCH_WORKERS:
                 return (T) new SearchWorkerDAOImpl();
+            case SEARCH_CUSTOMER:
+                return (T) new SearchCustomerDAOImpl();
             default:
                 return null;
         }

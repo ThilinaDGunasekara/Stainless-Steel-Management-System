@@ -111,7 +111,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <TableView fx:id="tblList" layoutX="66.0" layoutY="150.0" prefHeight="263.0" prefWidth="492.0" style="-fx-background-color: #F2F2F2;">
+            <TableView fx:id="tblList" layoutX="74.0" layoutY="149.0" prefHeight="263.0" prefWidth="508.0" style="-fx-background-color: #F2F2F2;">
               <columns>
                 <TableColumn prefWidth="112.0" style="-fx-alignment: CENTER;" text="CUSTOMER ID" />
                 <TableColumn prefWidth="123.0" style="-fx-alignment: CENTER;" text="NAME" />

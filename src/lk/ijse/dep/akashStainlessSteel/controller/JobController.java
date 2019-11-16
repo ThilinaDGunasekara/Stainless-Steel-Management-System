@@ -164,6 +164,10 @@ public class JobController {
         try {
             String lastJobId = jobBO.getLastJobId();
 
+            txtJobId.clear();
+            txtDescription.clear();
+            txtName.clear();
+
             if(lastJobId==null){
                 maxId=0;
 
@@ -186,10 +190,6 @@ public class JobController {
             new Alert(Alert.AlertType.ERROR,"Something went wrong, Please contact Mr.Thilina").show();
             Logger.getLogger("lk.ijse.dep.akashStainlessSteel.controller").log(Level.SEVERE, null,e);
         }
-
-        txtJobId.clear();
-        txtDescription.clear();
-        txtName.clear();
     }
 
     public void disableFalse(){

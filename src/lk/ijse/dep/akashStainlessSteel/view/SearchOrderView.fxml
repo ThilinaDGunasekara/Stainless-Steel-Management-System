@@ -112,11 +112,11 @@
             </ImageView>
             <TableView fx:id="tblList" layoutX="5.0" layoutY="150.0" prefHeight="264.0" prefWidth="607.0" stylesheets="@style/manageitemform.css">
                <columns>
-                  <TableColumn prefWidth="66.0" style="-fx-alignment: CENTER;" text="OR. ID" />
-                  <TableColumn prefWidth="79.0" style="-fx-alignment: CENTER;" text="DATE" />
-                  <TableColumn prefWidth="76.0" style="-fx-alignment: CENTER;" text="CUS. ID" />
-                  <TableColumn prefWidth="149.0" style="-fx-alignment: CENTER;" text="NAME" />
-                  <TableColumn prefWidth="116.0" style="-fx-alignment: CENTER;" text="TOTAL" />
+                  <TableColumn prefWidth="77.0" style="-fx-alignment: CENTER;" text="OR. ID" />
+                  <TableColumn prefWidth="82.0" style="-fx-alignment: CENTER;" text="DATE" />
+                  <TableColumn prefWidth="87.0" style="-fx-alignment: CENTER;" text="CUS. ID" />
+                  <TableColumn prefWidth="137.0" style="-fx-alignment: CENTER;" text="NAME" />
+                  <TableColumn prefWidth="103.0" style="-fx-alignment: CENTER;" text="TOTAL" />
                   <TableColumn prefWidth="120.0" style="-fx-alignment: CENTER;" text="REM. PAYMENT" />
                </columns>
                <effect>
